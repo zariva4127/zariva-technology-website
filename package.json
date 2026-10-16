@@ -1,0 +1,8 @@
+{
+  "name": "zariva-technology-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zariva Technology company website with a JSON-driven content API and admin panel",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

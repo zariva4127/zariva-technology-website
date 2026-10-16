@@ -1,0 +1,16 @@
+services:
+  zariva:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "80:3000"            # no domain yet: visit http://<server-ip>/
+    environment:
+      NODE_ENV: production
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in a .env file next to this file}
+      SITE_URL: ${SITE_URL:-http://localhost}
+      NOTIFY_WEBHOOK_URL: ${NOTIFY_WEBHOOK_URL:-}
+      TRUST_PROXY: "0"
+    volumes:
+      - zariva-data:/app/data   # content, messages, subscribers and backups survive restarts
+volumes:
+  zariva-data:

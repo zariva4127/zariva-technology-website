@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Zariva Admin</title>
+<link rel="stylesheet" href="/style.css">
+<style>
+ body{background:var(--alt)}
+ .bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:16px 0}
+ .bar .grow{flex:1}
+ .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+ fieldset{border:1px solid var(--line);border-radius:10px;margin:8px 0;padding:10px 14px}
+ legend{font-weight:700;font-size:.85rem;color:var(--brand)}
+ .item{border-left:3px solid var(--brand);padding-left:10px;margin:10px 0;position:relative}
+ .rm{position:absolute;right:0;top:0;background:none;border:0;color:#dc2626}
+ .add{background:var(--alt);border:1px dashed var(--line);color:var(--text);border-radius:8px;padding:6px 12px}
+ .msg{border-bottom:1px solid var(--line);padding:12px 0}
+ .login{max-width:360px;margin:15vh auto}
+ .toast{position:fixed;bottom:20px;right:20px;background:#059669;color:#fff;padding:10px 18px;border-radius:8px}
+ .toast.err{background:#dc2626}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let token = sessionStorage.getItem('tok'), data, section, tab = 'content';
+
+async function call(method, url, body) {
+  const r = await fetch(url, { method, headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: 'Bearer ' + token } : {}) }, body: body ? JSON.stringify(body) : undefined });
+  const d = await r.json();
+  if (r.status === 401 && token) { logout(); }
+  if (!r.ok) throw new Error(d.error || 'Request failed');
+  return d;
+}
+function toast(msg, err) { const t = document.createElement('div'); t.className = 'toast' + (err ? ' err' : ''); t.textContent = msg; document.body.append(t); setTimeout(() => t.remove(), 2500); }
+function logout() { if (token) fetch('/api/admin/logout', { method: 'POST', headers: { Authorization: 'Bearer ' + token } }).catch(() => {}); sessionStorage.removeItem('tok'); token = null; showLogin(); }
+
+function showLogin() {
+  $('#app').innerHTML = `<form class="login" id="lf"><h2>Admin login</h2><label>Password<input type="password" id="pw" autofocus></label><button class="btn">Sign in</button><p id="le" class="err" style="color:#dc2626"></p></form>`;
+  $('#lf').onsubmit = async (e) => {
+    e.preventDefault();
+    try { token = (await call('POST', '/api/admin/login', { password: $('#pw').value })).token; sessionStorage.setItem('tok', token); load(); }
+    catch (err) { $('#le').textContent = err.message; }
+  };
+}
+
+async function load() {
+  try { data = await call('GET', '/api/content'); } catch { return showLogin(); }
+  section = section || Object.keys(data)[0];
+  draw();
+}
+
+function draw() {
+  $('#app').innerHTML = `<div class="bar"><h2 class="grow" style="margin:0">Zariva Admin</h2>
+    <button class="chip ${tab === 'content' ? 'on' : ''}" data-tab="content">Content</button>
+    <button class="chip ${tab === 'messages' ? 'on' : ''}" data-tab="messages">Messages</button>
+    <button class="chip ${tab === 'subs' ? 'on' : ''}" data-tab="subs">Subscribers</button>
+    <a class="btn ghost small" href="/" target="_blank">View site</a><button class="btn ghost small" id="lo">Log out</button></div><div id="main"></div>`;
+  $('#lo').onclick = logout;
+  document.querySelectorAll('[data-tab]').forEach((b) => b.onclick = () => { tab = b.dataset.tab; draw(); });
+  tab === 'content' ? drawContent() : tab === 'subs' ? drawSubs() : drawMessages();
+}
+
+function drawContent() {
+  $('#main').innerHTML = `<div class="bar">${Object.keys(data).map((k) => `<button class="chip ${k === section ? 'on' : ''}" data-s="${esc(k)}">${esc(k)}</button>`).join('')}</div>
+    <div class="panel" id="ed"></div><button class="btn" id="save">Save “${esc(section)}”</button>`;
+  document.querySelectorAll('[data-s]').forEach((b) => b.onclick = () => { section = b.dataset.s; drawContent(); });
+  $('#ed').append(build(data[section], (v) => { data[section] = v; }, section));
+  $('#save').onclick = async () => { try { await call('PUT', '/api/content', data); toast('Saved. The live site is updated.'); } catch (e) { toast(e.message, true); } };
+}
+
+// Recursive form builder: strings, numbers, arrays and objects all become editable fields.
+function build(val, set, label) {
+  const box = document.createElement('div');
+  if (Array.isArray(val)) {
+    const fs = document.createElement('fieldset'); fs.innerHTML = `<legend>${esc(label)} (${val.length})</legend>`;
+    const paint = () => {
+      fs.querySelectorAll('.item,.add').forEach((n) => n.remove());
+      val.forEach((it, i) => {
+        const w = document.createElement('div'); w.className = 'item';
+        w.append(build(it, (v) => { val[i] = v; }, `#${i + 1}`));
+        const rm = document.createElement('button'); rm.type = 'button'; rm.className = 'rm'; rm.textContent = 'Remove';
+        rm.onclick = () => { val.splice(i, 1); paint(); }; w.append(rm); fs.append(w);
+      });
+      const add = document.createElement('button'); add.type = 'button'; add.className = 'add'; add.textContent = '+ Add';
+      add.onclick = () => { val.push(blank(val[val.length - 1])); paint(); }; fs.append(add);
+    };
+    paint(); box.append(fs); set(val);
+  } else if (val && typeof val === 'object') {
+    const fs = document.createElement('fieldset'); fs.innerHTML = `<legend>${esc(label)}</legend>`;
+    for (const k of Object.keys(val)) fs.append(build(val[k], (v) => { val[k] = v; }, k));
+    box.append(fs); set(val);
+  } else {
+    const l = document.createElement('label'); l.textContent = label;
+    const long = typeof val === 'string' && val.length > 70;
+    const inp = document.createElement(long ? 'textarea' : 'input'); inp.value = val ?? '';
+    if (long) inp.rows = 3; if (typeof val === 'number') inp.type = 'number';
+    inp.oninput = () => set(typeof val === 'number' ? Number(inp.value) : inp.value);
+    l.append(inp); box.append(l);
+  }
+  return box;
+}
+function blank(t) {
+  if (Array.isArray(t)) return [];
+  if (t && typeof t === 'object') return Object.fromEntries(Object.entries(t).map(([k, v]) => [k, blank(v)]));
+  return typeof t === 'number' ? 0 : '';
+}
+
+function downloadCSV(name, rows) {
+  const q = (v) => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+  const keys = Object.keys(rows[0] || {});
+  const csv = [keys.map(q).join(','), ...rows.map((r) => keys.map((k) => q(r[k])).join(','))].join('\n');
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' })); a.download = name; a.click();
+}
+async function drawMessages() {
+  $('#main').innerHTML = '<div class="panel" id="ml">Loading…</div>';
+  try {
+    const m = await call('GET', '/api/messages');
+    $('#ml').innerHTML = (m.length ? '<button class="add" id="csv-m">Download CSV</button>' : '') + (m.length ? m.map((x) => `<div class="msg"><b>${esc(x.name)}</b> &lt;<a href="mailto:${esc(x.email)}">${esc(x.email)}</a>&gt; <span class="meta">${new Date(x.date).toLocaleString()}</span>
+      ${x.subject ? `<div><b>${esc(x.subject)}</b></div>` : ''}${x.service || x.budget ? `<div class="meta">${esc(x.service)} ${x.budget ? '· ' + esc(x.budget) : ''}</div>` : ''}<p style="white-space:pre-wrap;margin:6px 0">${esc(x.message)}</p><button class="add" data-del="${esc(x.id)}">Delete</button></div>`).join('') : '<p>No messages yet.</p>');
+    if (m.length) $('#csv-m').onclick = () => downloadCSV('messages.csv', m);
+    document.querySelectorAll('[data-del]').forEach((b) => b.onclick = async () => { if (confirm('Delete this message?')) { await call('DELETE', '/api/messages/' + b.dataset.del); drawMessages(); } });
+  } catch (e) { $('#ml').textContent = e.message; }
+}
+
+async function drawSubs() {
+  $('#main').innerHTML = '<div class="panel" id="sl">Loading…</div>';
+  try {
+    const m = await call('GET', '/api/subscribers');
+    $('#sl').innerHTML = m.length ? `<p class="meta">${m.length} subscriber(s) <button class="add" id="csv-s">Download CSV</button></p>` + m.map((x) => `<div class="msg"><b>${esc(x.email)}</b> <span class="meta">${new Date(x.date).toLocaleDateString()}</span> <button class="add" data-unsub="${esc(x.email)}">Remove</button></div>`).join('') : '<p>No subscribers yet.</p>';
+    if (m.length) $('#csv-s').onclick = () => downloadCSV('subscribers.csv', m);
+    document.querySelectorAll('[data-unsub]').forEach((b) => b.onclick = async () => { await call('DELETE', '/api/subscribers/' + encodeURIComponent(b.dataset.unsub)); drawSubs(); });
+  } catch (e) { $('#sl').textContent = e.message; }
+}
+
+token ? load() : showLogin();
+</script>
+</body>
+</html>

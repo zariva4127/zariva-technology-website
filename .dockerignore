@@ -1,0 +1,6 @@
+.git
+.env
+data/messages.json
+data/subscribers.json
+data/backups
+README.md

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b1220">
+<title>Zariva Technology | Software that moves your business forward</title>
+<meta name="description" content="Zariva Technology is a full-service engineering partner. From web and mobile apps to cloud infrastructure and AI, we turn ideas into reliable, beautiful software.">
+<link rel="canonical" href="https://example.github.io/zariva-site/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zariva Technology">
+<meta property="og:title" content="Zariva Technology | Software that moves your business forward">
+<meta property="og:description" content="Zariva Technology is a full-service engineering partner. From web and mobile apps to cloud infrastructure and AI, we turn ideas into reliable, beautiful software.">
+<meta property="og:url" content="https://example.github.io/zariva-site/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Zariva Technology","url":"https://example.github.io/zariva-site","email":"support@zariva.com","telephone":"+91 90667 78765","description":"Zariva Technology is a full-service engineering partner. From web and mobile apps to cloud infrastructure and AI, we turn ideas into reliable, beautiful software.","address":{"@type":"PostalAddress","streetAddress":"New Delhi, India"},"sameAs":["https://linkedin.com","https://github.com","https://x.com"]}</script>
+<script src="theme.js"></script>
+<script src="config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<noscript><p class="noscript">Please enable JavaScript to view this site. Contact us at the address in the footer.</p></noscript>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo" id="logo"></a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+    <nav id="menu" aria-label="Main">
+      <a href="#services">Services</a><a href="#salesforce">Salesforce</a><a href="#portfolio">Work</a><a href="#pricing">Pricing</a><a href="#about">About</a><a href="#blog">Insights</a>
+      <a href="#contact" class="btn small">Contact</a>
+      <button id="theme" class="icon" aria-label="Switch colour theme" title="Switch colour theme">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1"><span id="top"></span>
+  <section class="hero"><div class="wrap" id="hero"></div></section>
+  <section class="strip"><p class="strip-label">Trusted by teams at</p><div class="marquee" id="clients"></div><p class="strip-label">Technologies we use</p><div class="marquee rev" id="tech"></div></section>
+  <section id="services"><div class="wrap"><h2>Our services</h2><p class="lead">Everything you need to design, build and run great software.</p><div class="grid3" id="services-list"></div></div></section>
+  <section id="salesforce" class="alt"><div class="wrap" id="sf-body"></div></section>
+  <section id="industries"><div class="wrap"><h2>Industries we serve</h2><div class="grid3" id="industry-list"></div></div></section>
+  <section id="about" class="alt"><div class="wrap" id="about-body"></div></section>
+  <section class="stats"><div class="wrap grid4" id="stats"></div></section>
+  <section id="process"><div class="wrap"><h2>How we work</h2><div class="grid4" id="process-list"></div></div></section>
+  <section id="pricing" class="alt"><div class="wrap"><h2>Engagement options</h2><p class="lead">Transparent starting points. Every project gets a tailored quote.</p><div class="grid3" id="pricing-list"></div><div class="card est" id="estimator"></div></div></section>
+  <section id="portfolio"><div class="wrap"><h2>Selected work</h2><div class="filters" id="filters"></div><div class="grid3" id="portfolio-list"></div></div></section>
+  <section id="testimonials" class="alt"><div class="wrap"><h2>What clients say</h2><div class="grid3" id="testimonial-list"></div></div></section>
+  <section id="team"><div class="wrap"><h2>Leadership team</h2><div class="grid4" id="team-list"></div></div></section>
+  <section id="blog" class="alt"><div class="wrap"><h2>Insights</h2><div class="toolbar"><input type="search" id="blog-q" placeholder="Search articles…" aria-label="Search articles"><div class="filters" id="blog-cats"></div></div><div class="grid3" id="blog-list"></div></div></section>
+  <section id="careers"><div class="wrap"><h2>Join our team</h2><p class="lead">We're always looking for curious, kind and talented people.</p><div id="careers-list"></div></div></section>
+  <section id="faq" class="alt"><div class="wrap narrow"><h2>FAQ</h2><div id="faq-list"></div></div></section>
+  <section id="contact"><div class="wrap two">
+    <div><h2>Let's talk</h2><p class="lead">Tell us about your project and we'll reply within one business day.</p><ul class="contact-info" id="contact-info"></ul><div class="social" id="social"></div></div>
+    <form id="form" novalidate>
+      <label>Name<input name="name" required maxlength="100"></label>
+      <label>Email<input name="email" type="email" required maxlength="150"></label>
+      <label>I'm interested in<select name="service" id="service-select"></select></label>
+      <label>Budget<select name="budget"><option value="">Not sure yet</option><option>Under $5k</option><option>$5k – $15k</option><option>$15k – $50k</option><option>$50k+</option></select></label>
+      <label>Subject<input name="subject" maxlength="150"></label>
+      <label>Message<textarea name="message" rows="5" required maxlength="3000"></textarea></label>
+      <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="consent"><input type="checkbox" name="consent" required> <span>I agree to the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and to being contacted about my enquiry.</span></label>
+      <button class="btn" type="submit">Send message</button>
+      <p id="form-status" role="status"></p>
+    </form>
+  </div></section>
+</main>
+
+<section class="news"><div class="wrap two"><div><h2>Stay in the loop</h2><p class="lead">Engineering insights and company news, once a month. No spam.</p></div><form id="news-form" novalidate><label>Email<input type="email" name="email" required placeholder="you@company.com" autocomplete="email"></label><div class="hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></div><button class="btn" type="submit">Subscribe</button><p id="news-status" role="status"></p></form></div></section>
+
+<footer><div class="wrap foot" id="footer"></div></footer>
+
+<button id="totop" class="totop" aria-label="Back to top" hidden>↑</button>
+<div class="modal" id="modal" hidden><div class="modal-box" role="dialog" aria-modal="true" aria-label="Details"><button class="icon close" id="modal-close" aria-label="Close">✕</button><div id="modal-body"></div></div></div>
+
+<script src="app.js"></script>
+<script src="chat.js"></script>
+<script src="network.js" defer></script>
+</body>
+</html>

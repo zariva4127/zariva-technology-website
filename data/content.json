@@ -1,0 +1,693 @@
+{
+  "company": {
+    "name": "Zariva Technology",
+    "tagline": "Software that moves your business forward",
+    "email": "support@zariva.com",
+    "phone": "+91 90667 78765",
+    "address": "New Delhi, India",
+    "hours": "9:00 AM – 6:00 PM",
+    "social": [
+      {
+        "label": "LinkedIn",
+        "url": "https://linkedin.com"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com"
+      },
+      {
+        "label": "X",
+        "url": "https://x.com"
+      }
+    ],
+    "bookingUrl": "",
+    "plausibleDomain": "",
+    "formEndpoint": ""
+  },
+  "hero": {
+    "eyebrow": "Software · Cloud · AI",
+    "title": "We build digital products that scale with your ambition",
+    "subtitle": "Zariva Technology is a full-service engineering partner. From web and mobile apps to cloud infrastructure and AI, we turn ideas into reliable, beautiful software.",
+    "primaryCta": {
+      "label": "Start a project",
+      "href": "#contact"
+    },
+    "secondaryCta": {
+      "label": "Explore services",
+      "href": "#services"
+    },
+    "terminal": [
+      "$ zariva deploy --prod",
+      "✔ Build optimised in 12s",
+      "✔ 248 tests passed",
+      "✔ Deployed to 3 regions",
+      "→ your-product.com is live"
+    ],
+    "chips": [
+      {
+        "icon": "shield",
+        "text": "99.9% uptime"
+      },
+      {
+        "icon": "cpu",
+        "text": "AI-ready"
+      },
+      {
+        "icon": "cloud",
+        "text": "Cloud native"
+      }
+    ],
+    "bookingLabel": "Book a free call"
+  },
+  "stats": [
+    {
+      "value": "120+",
+      "label": "Projects delivered"
+    },
+    {
+      "value": "45",
+      "label": "Engineers & designers"
+    },
+    {
+      "value": "12",
+      "label": "Countries served"
+    },
+    {
+      "value": "98%",
+      "label": "Client retention"
+    }
+  ],
+  "services": [
+    {
+      "icon": "code",
+      "title": "Web Development",
+      "description": "Fast, accessible, SEO-ready websites and web apps built with modern frameworks.",
+      "features": [
+        "React / Next.js",
+        "Node.js & Python APIs",
+        "E-commerce & CMS"
+      ]
+    },
+    {
+      "icon": "database",
+      "title": "Salesforce Services",
+      "description": "Implementation, customisation and integration of Salesforce to run sales, service and marketing on one platform.",
+      "features": [
+        "Sales, Service & Marketing Cloud",
+        "Apex, LWC & Flow automation",
+        "Data migration & integrations"
+      ]
+    },
+    {
+      "icon": "smartphone",
+      "title": "Mobile Apps",
+      "description": "Native and cross-platform iOS and Android apps your users will love.",
+      "features": [
+        "Swift & Kotlin",
+        "React Native & Flutter",
+        "App Store launch"
+      ]
+    },
+    {
+      "icon": "cloud",
+      "title": "Cloud & DevOps",
+      "description": "Secure, cost-efficient cloud architecture with automated delivery pipelines.",
+      "features": [
+        "AWS, Azure, GCP",
+        "Kubernetes & Terraform",
+        "CI/CD & monitoring"
+      ]
+    },
+    {
+      "icon": "cpu",
+      "title": "AI & Data",
+      "description": "Practical machine learning, LLM integrations and analytics that drive decisions.",
+      "features": [
+        "LLM assistants & RAG",
+        "Predictive models",
+        "Data pipelines"
+      ]
+    },
+    {
+      "icon": "pen-tool",
+      "title": "UI/UX Design",
+      "description": "Research-led product design that makes complex software feel simple.",
+      "features": [
+        "User research",
+        "Prototyping",
+        "Design systems"
+      ]
+    },
+    {
+      "icon": "shield",
+      "title": "Security & QA",
+      "description": "Testing, audits and hardening so you can ship with confidence.",
+      "features": [
+        "Penetration testing",
+        "Automated QA",
+        "Compliance support"
+      ]
+    }
+  ],
+  "about": {
+    "title": "A team of builders, thinkers and problem-solvers",
+    "paragraphs": [
+      "Founded in 2016, Zariva Technology helps startups and enterprises design, build and run software that matters. We combine senior engineering talent with a product mindset, so every release moves a real metric.",
+      "We work as an extension of your team: transparent, collaborative and focused on long-term outcomes rather than just deadlines."
+    ],
+    "values": [
+      {
+        "title": "Craftsmanship",
+        "text": "Clean code, thoughtful design, no shortcuts."
+      },
+      {
+        "title": "Transparency",
+        "text": "Open communication and honest estimates."
+      },
+      {
+        "title": "Ownership",
+        "text": "We treat your product as our own."
+      },
+      {
+        "title": "Continuous learning",
+        "text": "We stay ahead so you can too."
+      }
+    ]
+  },
+  "process": [
+    {
+      "title": "Discover",
+      "text": "Workshops to understand your goals, users and constraints."
+    },
+    {
+      "title": "Design",
+      "text": "Prototypes and architecture validated before we build."
+    },
+    {
+      "title": "Develop",
+      "text": "Agile sprints with demos every two weeks."
+    },
+    {
+      "title": "Deliver",
+      "text": "Automated testing, launch and ongoing support."
+    }
+  ],
+  "portfolio": [
+    {
+      "title": "FinFlow",
+      "category": "Web",
+      "summary": "A real-time payments dashboard for a fintech scale-up, cutting reconciliation time by 70%.",
+      "tags": [
+        "React",
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "color": "#6366f1",
+      "caseStudy": {
+        "challenge": "Finance teams spent days reconciling payments across five systems.",
+        "solution": "We built a real-time dashboard that ingests every payment feed and auto-matches transactions.",
+        "results": [
+          "70% faster reconciliation",
+          "99.9% uptime",
+          "Launched in 14 weeks"
+        ]
+      },
+      "id": "finflow",
+      "image": ""
+    },
+    {
+      "title": "MediTrack",
+      "category": "Mobile",
+      "summary": "Patient-engagement app with appointment booking and secure messaging, used by 200k patients.",
+      "tags": [
+        "Flutter",
+        "Firebase"
+      ],
+      "color": "#10b981",
+      "caseStudy": {
+        "challenge": "Patients struggled to book and manage appointments.",
+        "solution": "A cross-platform app with booking, reminders and end-to-end encrypted messaging.",
+        "results": [
+          "200k+ active patients",
+          "35% fewer no-shows",
+          "4.8★ app rating"
+        ]
+      },
+      "id": "meditrack",
+      "image": ""
+    },
+    {
+      "title": "ShipSmart",
+      "category": "AI",
+      "summary": "Route-optimisation engine that reduced fuel costs by 18% for a logistics network.",
+      "tags": [
+        "Python",
+        "ML",
+        "AWS"
+      ],
+      "color": "#f59e0b",
+      "caseStudy": {
+        "challenge": "Routes were planned manually, wasting fuel and time.",
+        "solution": "A machine-learning engine that optimises routes using traffic, load and delivery windows.",
+        "results": [
+          "18% lower fuel cost",
+          "22% more deliveries per day",
+          "ROI in 5 months"
+        ]
+      },
+      "id": "shipsmart",
+      "image": ""
+    },
+    {
+      "title": "LearnLoop",
+      "category": "Web",
+      "summary": "Adaptive e-learning platform with AI tutoring and progress analytics.",
+      "tags": [
+        "Next.js",
+        "LLM",
+        "Postgres"
+      ],
+      "color": "#ec4899",
+      "caseStudy": {
+        "challenge": "One-size-fits-all courses led to low completion rates.",
+        "solution": "Adaptive learning paths with an AI tutor and progress analytics.",
+        "results": [
+          "2.4x course completion",
+          "AI tutor answers 10k+ questions/month"
+        ]
+      },
+      "id": "learnloop",
+      "image": ""
+    },
+    {
+      "title": "CloudNest",
+      "category": "Cloud",
+      "summary": "Migration of a legacy monolith to Kubernetes with zero downtime and 40% lower hosting cost.",
+      "tags": [
+        "Kubernetes",
+        "Terraform"
+      ],
+      "color": "#0ea5e9",
+      "caseStudy": {
+        "challenge": "A legacy monolith was slow to ship and costly to host.",
+        "solution": "Incremental migration to containers on Kubernetes with automated pipelines.",
+        "results": [
+          "Zero downtime migration",
+          "40% lower hosting cost",
+          "Deploys went from weekly to daily"
+        ]
+      },
+      "id": "cloudnest",
+      "image": ""
+    },
+    {
+      "title": "Rideo",
+      "category": "Mobile",
+      "summary": "On-demand mobility app with live tracking, launched in six cities in four months.",
+      "tags": [
+        "Swift",
+        "Kotlin",
+        "Maps"
+      ],
+      "color": "#8b5cf6",
+      "caseStudy": {
+        "challenge": "Needed to enter six cities quickly with a reliable ride-hailing app.",
+        "solution": "Native iOS and Android apps with live tracking, payments and a driver console.",
+        "results": [
+          "Live in 6 cities in 4 months",
+          "1M+ rides in year one"
+        ]
+      },
+      "id": "rideo",
+      "image": ""
+    }
+  ],
+  "team": [
+    {
+      "name": "Aarav Mehta",
+      "role": "Founder & CEO",
+      "bio": "15 years building products for startups and enterprises.",
+      "photo": ""
+    },
+    {
+      "name": "Sofia Alvarez",
+      "role": "CTO",
+      "bio": "Distributed systems and cloud architecture specialist.",
+      "photo": ""
+    },
+    {
+      "name": "Daniel Kim",
+      "role": "Head of Design",
+      "bio": "Leads research-driven product design.",
+      "photo": ""
+    },
+    {
+      "name": "Priya Nair",
+      "role": "Head of AI",
+      "bio": "Turns research into production machine learning.",
+      "photo": ""
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Zariva delivered our platform ahead of schedule and the quality was outstanding. They feel like part of our team.",
+      "name": "Laura Bennett",
+      "role": "COO, FinFlow"
+    },
+    {
+      "quote": "Their engineers challenged our assumptions and shipped something far better than we asked for.",
+      "name": "Rahul Verma",
+      "role": "Founder, ShipSmart"
+    },
+    {
+      "quote": "Professional, transparent and genuinely invested in our success. Highly recommended.",
+      "name": "Hannah Fischer",
+      "role": "CEO, MediTrack"
+    }
+  ],
+  "blog": [
+    {
+      "id": "llm-in-production",
+      "title": "Shipping LLM features to production: lessons learned",
+      "date": "2026-09-12",
+      "author": "Priya Nair",
+      "excerpt": "Evaluation, guardrails and cost control are what separate demos from products.",
+      "body": [
+        "Everyone can build an LLM demo in an afternoon. Making it reliable for thousands of users is a different problem.",
+        "Start with evaluation: build a test set of real user questions before changing prompts. Add guardrails for input validation and output checks, and track cost per request from day one.",
+        "Finally, plan for fallbacks. Models change, APIs fail, and your users should never notice."
+      ],
+      "category": "AI"
+    },
+    {
+      "id": "kubernetes-cost",
+      "title": "Cutting Kubernetes costs by 40% without losing reliability",
+      "date": "2026-08-03",
+      "author": "Sofia Alvarez",
+      "excerpt": "Right-sizing, autoscaling and spot capacity: a practical playbook.",
+      "body": [
+        "Most clusters are over-provisioned. Begin by measuring actual CPU and memory usage per workload.",
+        "Right-size requests, enable horizontal and cluster autoscaling, and move fault-tolerant jobs to spot instances.",
+        "Review monthly. Cost optimisation is a habit, not a project."
+      ],
+      "category": "Cloud"
+    },
+    {
+      "id": "design-systems",
+      "title": "Why every growing product needs a design system",
+      "date": "2026-06-21",
+      "author": "Daniel Kim",
+      "excerpt": "Consistency, speed and accessibility, all from a shared component library.",
+      "body": [
+        "A design system is more than a style guide: it is shared language between design and engineering.",
+        "Teams with a system ship features faster, keep interfaces consistent and make accessibility the default instead of an afterthought."
+      ],
+      "category": "Design"
+    }
+  ],
+  "careers": [
+    {
+      "title": "Senior Full-Stack Engineer",
+      "location": "Remote",
+      "type": "Full-time",
+      "description": "Build and scale web applications with React and Node.js."
+    },
+    {
+      "title": "DevOps Engineer",
+      "location": "San Francisco / Hybrid",
+      "type": "Full-time",
+      "description": "Own our cloud infrastructure and delivery pipelines."
+    },
+    {
+      "title": "Product Designer",
+      "location": "Remote",
+      "type": "Contract",
+      "description": "Design delightful experiences for web and mobile products."
+    }
+  ],
+  "faq": [
+    {
+      "q": "How much does a project cost?",
+      "a": "It depends on scope. After a free discovery call we provide a fixed-price or time-and-materials proposal with clear milestones."
+    },
+    {
+      "q": "How long does it take to build an MVP?",
+      "a": "Most MVPs launch in 8–14 weeks, depending on complexity."
+    },
+    {
+      "q": "Do you provide support after launch?",
+      "a": "Yes. We offer maintenance and support plans covering monitoring, updates and new features."
+    },
+    {
+      "q": "Can you work with our in-house team?",
+      "a": "Absolutely. We regularly embed with client teams or take over specific workstreams."
+    },
+    {
+      "q": "Which technologies do you work with?",
+      "a": "We're technology-agnostic. Our core stack includes React, Node.js, Python, Swift, Kotlin, Flutter and the major clouds (AWS, Azure, GCP)."
+    },
+    {
+      "q": "Who owns the code?",
+      "a": "You do. All source code and IP transfer to you on final payment."
+    },
+    {
+      "q": "Do you sign NDAs?",
+      "a": "Yes, we're happy to sign an NDA before any discussion of your idea."
+    },
+    {
+      "q": "Do you work with Salesforce?",
+      "a": "Yes. We implement and customise Sales, Service, Marketing and Experience Cloud, build with Apex and Lightning Web Components, integrate with MuleSoft and APIs, and provide ongoing managed services."
+    }
+  ],
+  "techStack": [
+    "MuleSoft",
+    "Lightning Web Components",
+    "Apex",
+    "Salesforce",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Python",
+    "TypeScript",
+    "Swift",
+    "Kotlin",
+    "Flutter",
+    "AWS",
+    "Azure",
+    "Google Cloud",
+    "Kubernetes",
+    "Docker",
+    "Terraform",
+    "PostgreSQL",
+    "MongoDB",
+    "TensorFlow",
+    "OpenAI",
+    "Figma",
+    "GraphQL"
+  ],
+  "industries": [
+    {
+      "icon": "landmark",
+      "title": "FinTech",
+      "text": "Payments, lending and compliance-ready platforms."
+    },
+    {
+      "icon": "heart-pulse",
+      "title": "Healthcare",
+      "text": "Secure patient apps and health-data systems."
+    },
+    {
+      "icon": "shopping-cart",
+      "title": "E-commerce",
+      "text": "Storefronts, marketplaces and inventory tools."
+    },
+    {
+      "icon": "truck",
+      "title": "Logistics",
+      "text": "Tracking, routing and fleet optimisation."
+    },
+    {
+      "icon": "graduation-cap",
+      "title": "EdTech",
+      "text": "Learning platforms with adaptive content."
+    },
+    {
+      "icon": "factory",
+      "title": "Manufacturing",
+      "text": "IoT dashboards and operations software."
+    }
+  ],
+  "pricing": [
+    {
+      "name": "Starter",
+      "price": "$4,900",
+      "period": "one-time",
+      "description": "Launch a polished MVP or marketing site fast.",
+      "features": [
+        "Discovery workshop",
+        "Up to 5 pages / 3 core features",
+        "Responsive design",
+        "30 days of support"
+      ],
+      "highlight": false,
+      "cta": "Get started"
+    },
+    {
+      "name": "Growth",
+      "price": "$14,900",
+      "period": "per project",
+      "description": "A full product build with design, QA and cloud setup.",
+      "features": [
+        "UX research & design system",
+        "Web + API development",
+        "CI/CD & cloud deployment",
+        "Automated testing",
+        "90 days of support"
+      ],
+      "highlight": true,
+      "cta": "Talk to us"
+    },
+    {
+      "name": "Dedicated Team",
+      "price": "Custom",
+      "period": "monthly",
+      "description": "A long-term squad embedded with your company.",
+      "features": [
+        "Engineers, designer & PM",
+        "Flexible scaling",
+        "Weekly demos & reporting",
+        "Priority support"
+      ],
+      "highlight": false,
+      "cta": "Request a quote"
+    }
+  ],
+  "estimator": {
+    "title": "Estimate your project",
+    "subtitle": "Get a rough budget range in seconds.",
+    "currency": "$",
+    "services": [
+      {
+        "label": "Website",
+        "base": 4000
+      },
+      {
+        "label": "Web application",
+        "base": 12000
+      },
+      {
+        "label": "Mobile app",
+        "base": 15000
+      },
+      {
+        "label": "Cloud / DevOps",
+        "base": 8000
+      },
+      {
+        "label": "Salesforce implementation",
+        "base": 10000
+      },
+      {
+        "label": "AI / Data solution",
+        "base": 18000
+      }
+    ],
+    "sizes": [
+      {
+        "label": "Small",
+        "mult": 1
+      },
+      {
+        "label": "Medium",
+        "mult": 2
+      },
+      {
+        "label": "Large",
+        "mult": 3.5
+      }
+    ],
+    "timelines": [
+      {
+        "label": "Flexible",
+        "mult": 0.95
+      },
+      {
+        "label": "Standard",
+        "mult": 1
+      },
+      {
+        "label": "Rush (under 6 weeks)",
+        "mult": 1.3
+      }
+    ],
+    "note": "Indicative range only. We'll confirm a fixed quote after a free discovery call."
+  },
+  "clients": [
+    "FinFlow",
+    "MediTrack",
+    "ShipSmart",
+    "LearnLoop",
+    "CloudNest",
+    "Rideo",
+    "Northwind",
+    "Acme Corp"
+  ],
+  "salesforce": {
+    "eyebrow": "Salesforce",
+    "title": "Salesforce consulting, implementation & support",
+    "subtitle": "We help teams get real value from Salesforce: configured around your process, integrated with your systems and adopted by your people.",
+    "offerings": [
+      {
+        "icon": "users",
+        "title": "Sales Cloud",
+        "text": "Lead-to-cash workflows, pipeline management and forecasting tailored to how you sell."
+      },
+      {
+        "icon": "headset",
+        "title": "Service Cloud",
+        "text": "Case management, omnichannel support, knowledge bases and SLA automation."
+      },
+      {
+        "icon": "megaphone",
+        "title": "Marketing Cloud",
+        "text": "Journeys, segmentation and campaign automation driven by unified customer data."
+      },
+      {
+        "icon": "globe",
+        "title": "Experience Cloud",
+        "text": "Branded customer and partner portals with self-service and secure access."
+      },
+      {
+        "icon": "file-text",
+        "title": "CPQ & Revenue Cloud",
+        "text": "Guided selling, complex pricing, quotes, contracts and renewals."
+      },
+      {
+        "icon": "cpu",
+        "title": "Data Cloud & Einstein AI",
+        "text": "Unify data, build predictions and add AI assistants to your CRM."
+      },
+      {
+        "icon": "plug",
+        "title": "Integrations & MuleSoft",
+        "text": "Connect Salesforce to ERP, billing, marketing and custom systems through APIs."
+      },
+      {
+        "icon": "settings",
+        "title": "Managed Services",
+        "text": "Admin support, releases, health checks and a roadmap of continuous improvements."
+      }
+    ],
+    "highlights": [
+      "Custom development with Apex, Lightning Web Components and Flow",
+      "Data migration and clean-up from legacy CRMs and spreadsheets",
+      "Org audits, security reviews and performance tuning",
+      "User training and adoption programmes"
+    ],
+    "cta": {
+      "label": "Talk to a Salesforce expert",
+      "href": "#contact"
+    },
+    "note": "Salesforce and related marks are trademarks of Salesforce, Inc. Zariva Technology is an independent consultancy."
+  }
+}
